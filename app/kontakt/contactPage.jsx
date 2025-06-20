@@ -249,14 +249,14 @@ const ContactPage = () => {
                   >
                     Smederevski put 39a
                   </Link>
-                  <Link href={`tel:0118036602`} className="text-sm font-light">
-                    011 / 803 6602
+                  <Link href={`tel:063/574 498`} className="text-sm font-light">
+                  063 / 574 498
                   </Link>
                   <Link
-                    href={`mailto:vpbeograd@stefantekstil.rs`}
+                    href={`mailto:veleprodaja@stefantekstil.rs`}
                     className="text-sm font-light"
                   >
-                    vpbeograd@stefantekstil.rs
+                    veleprodaja@stefantekstil.rs
                   </Link>
                 </div>
                 <div className="flex flex-col max-lg:items-center max-lg:justify-center max-lg:text-center gap-0">

@@ -61,6 +61,28 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/pomoc-pri-kupovini",
+        destination: "/strana/pomoc-pri-kupovini",
+        permanent: true,
+        statusCode: 301,
+      },
+      {
+        source: "/catalogsearch/advanced",
+        destination: "/",
+        permanent: true,
+        statusCode: 301,
+      },
+      {
+        source: "/sitemap.xml",
+        destination: "/sitemap/sr-rs---193-index-1.xml",
+        permanent: true,
+        statusCode: 301,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

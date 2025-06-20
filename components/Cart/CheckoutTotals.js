@@ -56,7 +56,7 @@ const CheckoutTotals = ({ className, options, totals, summary, formData }) => {
         className={`flex items-center justify-between border-t border-t-white py-2`}
       >
         <p className={`${className} text-[0.965rem] font-normal`}>
-          Ukupno za naplatu:
+          Ukupno za naplatu sa PDV-om:
         </p>
         <p className={`${className} text-[1rem] font-medium`}>
           {currencyFormat(totals?.total)}

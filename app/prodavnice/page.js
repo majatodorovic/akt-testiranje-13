@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ProdavnicePage from "@/components/MarketsPage/ProdavnicePage";
 import { headers } from "next/headers";
 
@@ -17,6 +16,10 @@ export const generateMetadata = async ({ searchParams: { search } }) => {
   let canonical = header_list.get("x-pathname");
   return {
     title: `Prodavnice | Stefan Tekstil`,
-    description: "Dobrodošli na Stefan Tekstil Online Shop",
+    description:
+      "Stefan Tekstil prodavnice se nalaze u Arilje Put 22.avgusta bb, Beograd Nusiceva br. 19, Novi Sad Bulevar Evrope br.2",
+    alternates: {
+      canonical: canonical,
+    },
   };
 };

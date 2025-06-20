@@ -1,5 +1,6 @@
 import { get } from "@/app/api/api";
 import Link from "next/link";
+import { headers } from "next/headers";
 
 const getCategories = () => {
   return get("/categories/product/tree").then((res) => res?.payload);
@@ -85,3 +86,31 @@ const AllCategories = async () => {
 };
 
 export default AllCategories;
+
+export const generateMetadata = async () => {
+  const header_list = headers();
+  let canonical = header_list?.get("x-pathname");
+  return {
+    title: `Sve kategorije | Stefan Tekstil`,
+    description:
+      "Sve kategorije proizvoda Stefan kućni tekstil Arilje kao sto su Posteljine, Jorgani, Jastuci, Peskiri...",
+    alternates: {
+      canonical: canonical,
+    },
+    openGraph: {
+      title: `Sve kategorije | Stefan Tekstil`,
+      description:
+        "Sve kategorije proizvoda Stefan kućni tekstil Arilje kao sto su Posteljine, Jorgani, Jastuci, Peskiri...",
+      type: "website",
+      images: [
+        {
+          url: "https://api.akt.croonus.com/croonus-uploads/config/b2c/logo-bcca26522da09b0cfc1a9bd381ec4e99.jpg",
+          width: 800,
+          height: 600,
+          alt: "Stefan Tekstil DOO Logo",
+        },
+      ],
+      locale: "sr_RS",
+    },
+  };
+};

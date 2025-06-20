@@ -11,8 +11,8 @@ export const company_data = {
   stores: [
     {
       name: "Stefan Tekstil - Beograd",
-      telephone: "011 / 803 6602",
-      email: "vpbeograd@stefantekstil.rs",
+      telephone: "063 / 574 498",
+      email: "veleprodaja@stefantekstil.rs",
       street_address: "Smederevski put 39a",
       city: "Beograd",
       postal_code: "11000",
