@@ -63,36 +63,47 @@ const NewsletterModal = () => {
   return (
     <>
       {show && (
-        <div className="fixed bottom-0 right-0 top-0 left-0 max-sm:w-[95%] w-full max-w-xl h-fit m-auto max-h-[80%] overflow-y-auto z-[2002] bg-croonus-2">
-          <div className="bg-croonus-4">
-            <Image
-              src={Logo}
-              width={300}
-              height={300}
-              className="whiteFilter mx-auto py-6"
-            />
-          </div>
-          <div>
+        <div
+          className="fixed bottom-4 right-4 max-w-sm w-full max-h-[40vh] bg-croonus-2 overflow-hidden z-[2002] flex flex-col"
+          style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}
+        >
+          <div className="bg-croonus-4 flex justify-center py-4 px-6"></div>
+
+          <div className="flex-shrink-0">
             <Image
               src={ModalImage}
+              alt="Modal"
               width={300}
-              height={300}
-              className="object-cover w-full h-[300px]"
+              height={150}
+              className="object-cover w-full "
             />
           </div>
-          <div className="py-10 px-8 flex flex-col items-center gap-4">
-            <div className="uppercase font-medium text-3xl">
-             
+
+          <div className=" flex flex-col items-center gap-2 overflow-hidden w-full">
+            <div className="uppercase font-medium text-xl text-center w-full px-6">
+              Newsletter prijava
             </div>
-            <div className="border-t border-b border-black py-5 w-full text-center"></div>
+
+            {/* Linija gore */}
+            <div className="border-t border-black w-full" />
+
+            {/* Tekst između linija */}
+            <p className="text-center text-sm text-black px-2 py-0.1 m-0 leading-tight">
+              Uživajte u 10% popusta, u znak dobrodošlice na naš sajt!
+            </p>
+
+            {/* Linija dole */}
+            <div className="border-b border-black w-full" />
+
             {loading ? (
               <div>
                 <i className="fa-solid fa-spinner text-[1.1rem] animate-spin"></i>
               </div>
             ) : (
               <form
-                className="flex justify-center items-center w-full sm:w-3/4 relative mt-5"
+                className="flex w-full mt-2"
                 onSubmit={handleSubmit(onSubmit)}
+                style={{ paddingLeft: 0, paddingRight: 0 }}
               >
                 <input
                   type="email"
@@ -106,29 +117,34 @@ const NewsletterModal = () => {
                         ),
                     },
                   })}
-                  className="w-full py-3 pl-5 pr-[8rem] bg-croonus-2 placeholder:text-croonus-4 border border-croonus-4 self-stretch focus:ring-0 focus:outline-none focus:border-croonus-4"
+                  className="py-2 px-3 bg-croonus-2 placeholder:text-croonus-4 border border-croonus-4 focus:ring-0 focus:outline-none focus:border-croonus-4 text-sm"
+                  style={{
+                    flex: 1,
+                    borderTopRightRadius: 0,
+                    borderBottomRightRadius: 0,
+                    borderRight: "none",
+                  }}
                 />
                 <button
                   type="submit"
                   onClick={() => {
                     if (!isValid) handleError();
                   }}
-                  className="absolute right-0 bg-croonus-4 w-[7rem] py-3 text-white hover:bg-opacity-80"
+                  className="bg-croonus-4 py-2 text-white hover:bg-opacity-80 text-sm"
+                  style={{
+                    flex: 1,
+                    borderTopLeftRadius: 0,
+                    borderBottomLeftRadius: 0,
+                  }}
                 >
                   Prijavite se
                 </button>
               </form>
             )}
           </div>
-          <div className="text-right pr-4 pb-2"></div>
         </div>
       )}
-      {show && (
-        <div
-          onClick={handleClose}
-          className="fixed top-0 left-0 bg-black/70 h-[100dvh] w-[100dvw] z-[2001]"
-        />
-      )}
+      {/* Nema overlay zatamnjenja */}
     </>
   );
 };
