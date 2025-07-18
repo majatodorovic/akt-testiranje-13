@@ -137,7 +137,7 @@ const NewsletterModal = () => {
                     borderBottomLeftRadius: 0,
                   }}
                 >
-                  Prijavite se
+            
                 </button>
               </form>
             )}
